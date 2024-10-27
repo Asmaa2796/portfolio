@@ -3,8 +3,13 @@ import MobileNav from "./MobileNav";
 
 const Navbar = ({ scrollToSection, refs }) => {
   const [mobileNav, setMobileNav] = useState(false);
-  const showMobileNav = () => {
-    setMobileNav(true);
+
+  const toggleMobileNav = () => {
+    setMobileNav((prev) => !prev); // Toggle the state
+  };
+
+  const closeMobileNav = () => {
+    setMobileNav(false); // Close the mobile nav
   };
 
   return (
@@ -16,37 +21,37 @@ const Navbar = ({ scrollToSection, refs }) => {
           </span>
           <button
             className="btn text-white onMob"
-            onClick={showMobileNav}
+            onClick={toggleMobileNav}
             style={{ borderColor: "#fdfdfd4d" }}
           >
             <i className="fa fa-gear"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mx-auto p-0">
-              <li className="nav-item" onClick={() => scrollToSection(refs.heroRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.heroRef); closeMobileNav(); }}>
                 <span className="nav-link">Home</span>
               </li>
-              <li className="nav-item" onClick={() => scrollToSection(refs.aboutRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.aboutRef); closeMobileNav(); }}>
                 <span className="nav-link">About</span>
               </li>
-              <li className="nav-item" onClick={() => scrollToSection(refs.servicesRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.servicesRef); closeMobileNav(); }}>
                 <span className="nav-link">Services</span>
               </li>
-              <li className="nav-item" onClick={() => scrollToSection(refs.skillsRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.skillsRef); closeMobileNav(); }}>
                 <span className="nav-link">Skills</span>
               </li>
-              <li className="nav-item" onClick={() => scrollToSection(refs.workRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.workRef); closeMobileNav(); }}>
                 <span className="nav-link">Work</span>
               </li>
-              <li className="nav-item" onClick={() => scrollToSection(refs.contactsRef)}>
+              <li className="nav-item" onClick={() => { scrollToSection(refs.contactsRef); closeMobileNav(); }}>
                 <span className="nav-link">Contacts</span>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      {/* mobile nav */}
-      {mobileNav && <MobileNav scrollToSection={scrollToSection} refs={refs} />}
+      {/* Mobile Nav */}
+      {mobileNav && <MobileNav scrollToSection={scrollToSection} refs={refs} closeNav={closeMobileNav} />}
     </>
   );
 };
