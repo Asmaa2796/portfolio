@@ -1,13 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: Outfit;
+  src: url(./OutfitRegular.ttf);
+}
+:root {
+  --dark-color: #091721;
+  --main-color: #00bfff;
+}
+body::-webkit-scrollbar {
+  width: 10px; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);  
+  border-radius: 20px;  
+  border: 1px solid #ddd; 
+}
+body {
+margin: 0;
+font-family: "Outfit", sans-serif !important;
+position: relative;
+overflow-x: hidden;
+background-color: var(--dark-color) !important;
 }
