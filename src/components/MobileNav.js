@@ -1,6 +1,6 @@
 const MobileNav = ({ scrollToSection, refs }) => {
     return (
-      <div className="mobile-nav" data-aos="fade-up">
+      <div className="mobile-nav">
         <ul className="list-unstyled p-0 mb-0">
           <li onClick={() => scrollToSection(refs.heroRef)}>
             <i className="fa fa-home"></i>
