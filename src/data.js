@@ -23,7 +23,7 @@ export const contacts = [
     {
       id: 1,
       icon: "fa fa-envelope",
-      txt: "contacts.asmaa@gmail.com",
+      txt: "asmaa7cu@gmail.com",
       label: "Email",
     },
     { id: 2, icon: "fa fa-phone", txt: "01xxxxxxxx", label: "Phone" },
